@@ -37,7 +37,7 @@
 <body>
   <div id="app">
     <button v-on:click="openModal">開く</button>
-    <div id="modal" v-show="showModal">
+    <div id="modal" v-show="showModal" v-on:click="closeModal">
       <div id="content">
         <p>モーダルウィンドウ</p>
         <button v-on:click="closeModal">閉じる</button>
