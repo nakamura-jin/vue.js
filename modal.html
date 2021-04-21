@@ -40,7 +40,7 @@
     <div id="modal" v-show="showModal" v-on:click.self="closeModal">
       <div id="content">
         <p>モーダルウィンドウ</p>
-        <button>閉じる</button>
+        <button v-on:click.self="closeModal">閉じる</button>
       </div>
     </div>
   </div>
