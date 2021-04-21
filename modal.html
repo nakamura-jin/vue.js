@@ -37,10 +37,10 @@
 <body>
   <div id="app">
     <button v-on:click="openModal">開く</button>
-    <div id="modal" v-show="showModal" v-on:click="closeModal">
-      <div id="content">
+    <div id="modal" v-show="showModal" v-on:click.self="closeModal">
+      <div id="content" v-on:click.self="closeModal">
         <p>モーダルウィンドウ</p>
-        <button v-on:click="closeModal">閉じる</button>
+        <button>閉じる</button>
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@
     const vm =new Vue({
       el: '#app',
       data: {
-        showModal: false
+        showModal: false,
       },
       methods: {
         openModal: function(){
@@ -56,7 +56,7 @@
         },
         closeModal: function() {
           this.showModal = false
-        }
+        },
       }
     })
   </script>
